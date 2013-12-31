@@ -1,0 +1,79 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace doubleroToOOP
+{
+    class Shape
+    {
+        //Method to calculate are of a rectangle based on parameters length and width
+        public double area_rectangle(double length, double width)
+        {
+            double A_rectangle;
+            A_rectangle = (length * width);
+            return A_rectangle;s
+        }
+
+        //Method to calculate are of a triangle based on parameters base b and height
+        public double area_triangle(double b, double height)
+        {
+            double A_triangle;
+            A_triangle = (.5 * (b * height));
+            return A_triangle;
+        }
+
+        static void Main(string[] args)
+        {
+            string response;
+            double triangle_b;
+            double triangle_height;
+            double rectangle_length;
+            double rectangle_height;
+            double area;
+
+            Console.WriteLine("Shape Area Calculator");
+            Console.WriteLine("1) Triangle \n 2) Rectangle \n 5) Quit");
+            response = Console.ReadLine();
+
+            while (!response.Equals("5"))
+            {
+                switch (response)
+                {
+                    //case 1: triangle
+                    case "1":
+                        Shape t = new Shape();
+                        Console.WriteLine("base:");
+                        triangle_b = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("Height:");
+                        triangle_height = Convert.ToDouble(Console.ReadLine());
+                        area = t.area_triangle(triangle_b, triangle_height);
+                        Console.WriteLine("The area is {0}", area);
+                        Console.WriteLine("~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-");
+                        Console.WriteLine("1) Triangle \n 2) Rectangle \n 5) Quit");
+                        response = Console.ReadLine();
+                        break;
+
+                    //case 2: Rectangle
+                    case "2":
+                        Shape r = new Shape();
+                        Console.WriteLine("Length:");
+                        rectangle_length = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("Height:");
+                        rectangle_height = Convert.ToDouble(Console.ReadLine());
+                        area = r.area_rectangle(rectangle_length, rectangle_height);
+                        Console.WriteLine("The area is {0}", area);
+                        Console.WriteLine("~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-");
+                        Console.WriteLine("1) Triangle \n 2) Rectangle \n 5) Quit");
+                        response = Console.ReadLine();
+                        break;                
+
+                }
+            }
+        }
+    }
+}
+
+
+
