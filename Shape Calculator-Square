@@ -1,0 +1,18 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace IntroToOOP
+{
+    class Square
+    {
+        public double area_square(double side)
+        {
+            double A_Square;
+            A_Square = (side * side);
+            return A_Square;
+        }
+    }
+}
