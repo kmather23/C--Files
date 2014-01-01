@@ -1,0 +1,104 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace IntroToOOP
+{
+    class Shape
+    {
+        static void Main(string[] args)
+        {
+            string response;
+            double triangle_b;
+            double triangle_height;
+            double rectangle_length;
+            double rectangle_height;
+            double square_side;
+            double area;
+            string person1;
+            string person2;
+
+            Console.WriteLine("Shape Area Calculator");
+            Console.WriteLine("1) Triangle \n 2) Rectangle \n 3) Square \n 4) Say Hello \n 5) Quit");
+            response = Console.ReadLine();
+
+            while (!response.Equals("5"))
+            {
+                switch (response)
+                {
+                    //case 1: triangle
+                    case "1":
+                        Triangle t = new Triangle();
+                        Console.WriteLine("base:");
+                        triangle_b = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("Height:");
+                        triangle_height = Convert.ToDouble(Console.ReadLine());
+                        area = t.area_triangle(triangle_b, triangle_height);
+                        Console.WriteLine("The area is {0}", area);
+                        Console.WriteLine("~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-");
+                        Console.WriteLine("1) Triangle \n 2) Rectangle \n 3) Square \n 4) Say Hello \n 5) Quit");
+                        response = Console.ReadLine();
+                        break;
+
+                    //case 2: Rectangle
+                    case "2":
+                        Rectangle r = new Rectangle();
+                        Console.WriteLine("Length:");
+                        rectangle_length = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("Height:");
+                        rectangle_height = Convert.ToDouble(Console.ReadLine());
+                        area = r.area_rectangle(rectangle_length, rectangle_height);
+                        Console.WriteLine("The area is {0}", area);
+                        Console.WriteLine("~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-");
+                        Console.WriteLine("1) Triangle \n 2) Rectangle \n 3) Square \n 4) Say Hello \n 5) Quit");
+                        response = Console.ReadLine();
+                        break;
+
+                    case "3":
+                        Square s = new Square();
+                        Console.WriteLine("side:");
+                        square_side = Convert.ToDouble(Console.ReadLine());
+                        area = s.area_square(square_side);
+                        Console.WriteLine("The area is {0}", area);
+                        Console.WriteLine("~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-");
+                        Console.WriteLine("1) Triangle \n 2) Rectangle \n 3) Square \n 4) Say Hello \n 5) Quit");
+                        response = Console.ReadLine();
+                        break;
+                    
+                     case "4":
+                        Console.WriteLine("Person 1:");
+                        person1 = Console.ReadLine();
+                        Console.WriteLine("Person 2 (leave blank if no other user):");
+                        person2 = Console.ReadLine();
+
+                        if (person2 == "")
+                        {   
+                            Greeting person = new Greeting();
+                            Console.WriteLine(person.greeting(person1));
+                        }
+
+                        else 
+                        {
+                            Greeting persons = new Greeting();
+                            Console.WriteLine(persons.greeting(person1, person2));
+                        }
+                        Console.WriteLine("~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-");
+                        Console.WriteLine("1) Triangle \n 2) Rectangle \n 3) Square \n 4) Say Hello \n 5) Quit");
+                        response = Console.ReadLine();
+                        
+                        break;
+
+                    default:
+                        Console.WriteLine("Please select a number 1-5");
+                        response = Console.ReadLine();
+                        break;
+                }
+            }
+        }
+    }
+}
+
+
+
