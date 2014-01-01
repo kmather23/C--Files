@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace IntroToOOP
+{
+    class Greeting
+    {
+        public string greeting(string person1)
+        {
+            string response;
+            response = "greeting 1: Hello " + person1;
+            return response;                
+        }
+
+        public string greeting(string person1, string person2)
+        {
+            string response;
+            response = "greeting 2 overload: Hello " + person1 + " & " + person2;
+            return response;
+        }
+    }
+}
