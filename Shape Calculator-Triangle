@@ -1,0 +1,18 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace IntroToOOP
+{
+    class Triangle
+    {
+        public double area_triangle(double b, double height)
+        {
+            double A_triangle;
+            A_triangle = (.5 * (b * height));
+            return A_triangle;
+        }
+    }
+}
