@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ProjectEuler
+{
+    class SolutionPage
+    {
+        static void Main(string[] args)
+        {
+            //Begin Program 1
+            int max;
+
+            Program n = new Program();
+
+
+            Console.WriteLine("What max do you want for project 1?");
+            max = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Program 1 total is {0}", n.Project3(max));
+            Console.ReadKey();
+            //End program 1
+        }
+    }
+}
