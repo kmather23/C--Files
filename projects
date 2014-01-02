@@ -1,0 +1,99 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using ProjectEuler;
+
+namespace ProjectEuler
+{
+    class Program
+    {
+        public int Project1(int max)
+        {
+            //Program1-sum of multiples of 3 and 5 under 1000
+            int total = 0;
+
+            for (int i = 0; i < max; i++)
+            {
+                if ((i % 3 == 0) || (i % 5 == 0))
+                {
+                    total += i;
+                }
+            }
+            return total; 
+        }
+
+        public int Project2(int max)
+        {
+            //Program2- sum evens of the fibonacci sequence under 4,000,000
+            int total = 0;
+            int nextNum = 0;
+
+            int[] oldNumbers = new int[2] { 1, 0 };
+            int[] newNumbers = new int[2] { 1, 0 };
+
+            for (int i = 1; i < max; i+=nextNum)
+            {
+                if ((i % 2 == 0))
+                {
+                     total += i;
+                }
+                oldNumbers[0] = newNumbers[0];
+                oldNumbers[1] = newNumbers[1];
+                newNumbers[1] = oldNumbers[0] + oldNumbers[1];
+                newNumbers[0] = oldNumbers[1];
+                nextNum = newNumbers[1];
+            }
+            return total;
+        }
+
+        public int Project3(int n)
+        {
+            int max = 0;
+            int test = 0;
+            int prime = 0;
+
+            //while maximum prime is not found
+            while (max == 0)
+            {
+                //check for the highest factors by dividing by a number (n), starting with 2 and incrementing to a max of the number itself
+                for (int i = 2; i < n; i++)
+                {
+                    Console.WriteLine("\nn " + n + " i " + i);
+                    System.Threading.Thread.Sleep(1000);
+                    //if the testing number is evenly divisible by n, if it is, it is a factor of max
+                    if (n % i == 0)
+                    {      
+                        test = n / i;
+                        Console.WriteLine("test" + test);
+                        //is test prime? start dividing n by decrementing numbers starting with n-1 ending with 2, if all have remainders then yes 
+                        for (prime = test-1; prime > 1; prime--)
+                        {
+                            Console.WriteLine("test" + test + " prime " + prime);
+                            Console.WriteLine(test % prime != 0);
+                            System.Threading.Thread.Sleep(1000);
+                            if (test % prime != 0)
+                                {
+                                Console.WriteLine("checking prime");
+                                if (prime != 1)
+                                {
+                                    Console.WriteLine("setting max");
+                                    max = test;
+                                    break;
+                                }
+                                else 
+                                    continue;
+                            }
+                            else
+                                break;
+                        }
+                    }                    
+                }
+            }
+
+            return max;
+	    }
+        
+    }
+}
